@@ -1,0 +1,44 @@
+/* Do everything in this file */
+h2, h3 {
+    border-bottom: 1px solid red;
+    clear: both;
+}
+figure {
+    float: right;
+    width: 40%;
+}
+figure img {
+    
+    width: 100%;
+}
+p {
+    margin-right: 10px;
+}
+.tet {
+    float: left;
+    width: 20rem;
+    border: 1px solid black;
+}
+footer {
+    clear: both;
+
+    /* Appear 500px higher 
+    position: relative;
+    top: -500px;
+    */
+
+    /* appear at the top of the page 
+    position: absolute;
+    top: 0; 
+    */
+
+    /* stay on the top right of the page
+    position: fixed;
+    top: 0;
+    right: 0;
+    */
+    /* deeper level 
+    z-index: -1;
+    */
+
+}
