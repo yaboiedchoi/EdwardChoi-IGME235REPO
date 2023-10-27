@@ -1,5 +1,6 @@
 * {
     font-family: sans-serif;
+    overscroll-behavior-y: none;
 }
 #wrapper {
     display: grid;
@@ -10,6 +11,9 @@
                          "navbar topcontent sidebar"
                          "navbar lowercontent sidebar"
                          "footer footer footer";
+}
+body {
+    margin: auto;
 }
 header {
     grid-area: header;
@@ -66,8 +70,12 @@ nav {
 }
 article {
     grid-area: topcontent;
+    display: grid;
     background-color: lightgray;
-    border-bottom: 5px solid gray
+    border-bottom: 5px solid gray;
+    background: url(../media/portrait.JPG) center/cover no-repeat;
+    background-size: contain;
+    align-items: center;
 }
 main {
     grid-area: lowercontent;
@@ -84,20 +92,24 @@ footer {
 header h1 {
     align-items: center;
 }
-.article {
+.article-text {
     display: flex;
-    flex-direction: row;
     align-items: center;
-    justify-content: center;
-    background: url(../media/portrait.JPG) center/cover no-repeat;
-    padding: 20px;
+    justify-content: space-between;
+    padding: 50px;
 }
 main {
     display: flex;
     align-items: center; 
-    flex-direction: row;
+    flex-direction: column;
     justify-content: center; 
     background-color: lightgray; 
+}
+.boxes {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: center;
 }
 .box {
     width: 300px;
@@ -114,7 +126,7 @@ main {
     max-height: 150px;
     width: 200px;
     height: 150px;
-    
+    margin: 10px 10px 0px 10px;
 }
 footer {
     padding: 10px 10%;
@@ -128,6 +140,15 @@ footer {
 
 .menuContent img {
     filter: invert(0);
+}
+.navbarLink {
+    padding-right: 30px;
+    color: white;
+    text-decoration: none;
+}
+.box p {
+    text-align: left;
+    margin: 0px 10px 0px 10px;
 }
 
 @media screen and (max-width: 1000px) {
@@ -145,7 +166,7 @@ footer {
         padding-left: 5px;
         padding-right: 5px;
     }
-    main {
+    .boxes {
         flex-direction: column;
     }
     /*
@@ -231,5 +252,8 @@ footer {
     
         background-color: darkslategray;
     
+    }
+    .article-text {
+        padding: 10px;
     }
 }
