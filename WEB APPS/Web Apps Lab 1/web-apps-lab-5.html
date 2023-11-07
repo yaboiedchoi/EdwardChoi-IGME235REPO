@@ -40,17 +40,27 @@
 <script>
     "use strict";
 
-    const button = document.getElementById("colorButton");
-    const info = document.getElementById("info");
-    const legend = document.querySelector("#colorform legend");
+	const colorform = document.getElementById('colorform');
+    const button = colorform.querySelector('button');
+    const info = document.getElementById('info');
+    const legend = colorform.querySelector('legend');
+	const colorOptions = colorform.querySelectorAll('input[name="colorGroup"]');
+
+	
+	
+	
+	for (const option of colorOptions){
+		option.addEventListener("change", () => {
+			const color = document.querySelector('input[name="colorGroup"]:checked').value;
+			info.innerHTML = 'You have selected "' + color + '"!';
+		});
+	}
+	
 
     button.addEventListener("click", () => {
-        const color = document.querySelectorAll('input[name="colorgroup"]:checked').nodeValue;
-        info.textContent = 'you have selected "${color}"!';
-        info.style.backgroundColor = color;
-        info.style.color = "white";
-        info.innerHTML.textContent = 'your final choice is "${color}"!';
-        legend.style.color = color;
+		const color = document.querySelector('input[name="colorGroup"]:checked').value;
+		info.innerHTML = 'Your FINAL CHOICE is "' + color + '"!';
+		legend.style.color = color;
     });
 </script>
 </body>
