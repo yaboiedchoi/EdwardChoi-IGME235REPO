@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RECPG</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet"> 
+    <style>
+        body {
+            background-color: pink;
+        }
+        #container {
+            font-family: 'Ubuntu', sans-serif;
+            color: white;
+            display: flex;
+            background: center/cover no-repeat;
+            background-image: url(media/portrait.jpg);
+            flex-direction: column;
+            margin: auto;
+            width: 700px;
+            height: 500px;
+            align-items: center;
+            justify-content: space-between;
+            /*
+            border: solid 5px red;
+            */
+        }
+        #headerText {
+            margin: 0 auto;
+            background-color: firebrick;
+            padding: 20px;
+            width: auto;
+            height: auto;
+            /*
+            border: solid 5px pink;
+            */
+        }
+        h1{
+            margin: auto;
+            max-width: 700px;
+            /*
+            border: solid 5px red;
+            */
+
+        }
+        button {
+            font-size: xx-large;
+            width: 100px;
+            height: 75px;
+            background-color: pink
+        }
+        button:hover {
+            background-color: red;
+        }
+        button:active {
+            background-color: firebrick;
+        }
+        @media screen and (max-width: 760px) {
+            #container {
+                max-width: 80%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div id="headerText">
+            <h1>Random Edward Choi Phrase Generator</h1>
+        </div>
+        <div id="button">
+            <button>Go!</button>
+        </div>
+        <div id="copyrightText">
+            <p>Copyright &copy; 20XX Edward Choi</p>
+        </div>
+    </div>
+    <script>
+        "use strict";
+        const container = document.getElementById('container');
+        const copyrightText = document.getElementById('copyrightText').querySelector('p');
+        const headerText = container.querySelector('h1');
+        const button = document.getElementById('button');
+
+        let quoteList = {"Who are you": "EC1.jpg",
+                         "Peace man": "EC2.jpg",
+                         "Meow": "EC3.jpg",
+                         "What are you lookin at": "EC4.jpg",
+                         "Whatchu talkin about": "EC5.jpg"}
+
+        function randomChoose() {
+            const phraseArray = Object.keys(quoteList);
+            const randomPhrase = phraseArray[Math.floor(Math.random() * phraseArray.length)];
+            const randomImage = quoteList[randomPhrase];
+
+            container.style.backgroundImage = 'url(media/' + randomImage + ')';
+
+            headerText.textContent = '"' + randomPhrase + '"';
+        }
+
+        button.addEventListener("click", randomChoose);
+        const currentYear = new Date().getFullYear();
+        copyrightText.innerHTML = 'Copyright &copy; ' + currentYear + ' Edward Choi';
+
+    </script>
+</body>
+</html>
