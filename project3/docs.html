@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documentation</title>
+    <link rel="stylesheet" href="css/docs.css">
+</head>
+<body>
+    <p>I have found another API that I could possibly use called Ephemeris API. Seems alot easier to use compared to Astrology API or NASA API. </p>
+    <p>Here is the documentation: <a href="https://astrologyapi.docs.apiary.io/#">https://astrologyapi.docs.apiary.io/#</a></p>
+    <p>After reading the documentation, I realize every API I have found so far isn't really about Astronomy as I'd hoped. They're all about Astrology. 
+        I may unfortunately have to scrap the accurate planetary location part of this project. </p>
+    <p>I have scrapped the accurate planetary location and am looking to make the planets static in the scene. </p>
+    <p>I have made 32x32 pixel art of all the planets + the sun. </p>
+    <p>I changed the pixi version from 7 to 6 as image loading is not working. </p>
+    <p>I have now loaded all the images, and wrote LoadPlanets(), LoadOrbits(), StartGame(), and setup(). Currently nothing is moving, however it displays everything once 
+        the enter button has been clicked!
+    </p>
+    <img src="images/solarsystemdone.png" alt="Image of the almost completed product">
+    <p class="Date">Dec 6, 2023</p>
+    <p>I got the rotation working! I added an update() method to the planet class, which calculates your location using sin and cos</p>
+    <p>added a variable to the Planet class called speed, so that I don't have to manually code each planet's speed in update()</p>
+    <p>added a property to the Orbit class called radius, which allows me to access a planet's orbit radius at any time. </p>
+    <p class="Date">Dec 7, 2023</p>
+    <p>added a planet name field and property (i dont know why i didnt do this before)</p>
+    <p>added LoadButtons, where it adds buttons for each planet on the left side. Added some utilities like BringToFront() where it brings the selected sprite on top of the canvas. </p>
+    <p>added ClearCurrentScene(), will be used later. </p>
+    <p>added functionality to the buttons, hovering over them will bring the planet to the top of the canvas, and temporarily increase the size of the planet. </p>
+    <p class="Date">Dec 14, 2023</p>
+    <p>added sound functionality using Howler! I created the main soundtrack, hovered, unhovered, and clicked audio! ISSUE: though sometimes I dont hear it, but there is never an error displayed about it</p>
+    <p>clicking on said planet will now call focused()!, it will display a picture and some information about said selected planet, and a NASA external link for more information. </p>
+    <p class="Date">Dec 15, 2023</p>
+    <p>Added a back button on the focused() planets, allowing users to go back to the solar system. </p>
+    <p>Unfortunately, using an API had to be scrapped. I was trying to get images from the NASA API but I have to call everything at the beginning, before images are loaded, which I would have to hard code all of it. </p>
+    <p>Instead, I hard coded all the information and had an external link for more. I had to hard code all my information, as there was a lot of information being passed in for each planet, and creating a function would make its constructor very long. Instead, I put everything in a switch statement. </p>
+    <p class="Date">Sources Used: </p> 
+    <p><a href="https://solar-center.stanford.edu/vitalstats.html">Solar Stats</a></p>
+    <p><a href="https://science.nasa.gov/">NASA Planet information and descriptions</a></p>
+    <p><a href="https://www.nasa.gov/">NASA Images</a></p>
+    <p><a href="www.windows2universe.org">Planetary Information</a></p>
+    <p><a href="www.theoi.com">Greek Mythos</a></p>
+</body>
+</html>

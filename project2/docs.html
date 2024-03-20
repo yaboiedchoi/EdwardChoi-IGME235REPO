@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project 2 Documentation</title>
+</head>
+<body>
+    <h3>Original Proposal: </h3>
+
+    <p>I am looking to improve GIPHY. I am looking to add the ability to instantly put the 
+        gif into your pastebin by just clicking on it, and I am also looking to add favoriting images. 
+        The purpose for this project is to help people on the internet look for gifs to express themselves. 
+        I am looking for feedback on my proposal to see if I am on track for a 100%, 
+        as I didn't do as well in the previous project.</p>
+
+    <h3>Feedback: </h3>
+
+    <p>It would be nice to see the layout mockup in another layer of detail. But it is relatively simple 
+        if you want to make it like this you could but you would lose a few points on visual design 
+        unless you make it look really nice UI look and feel etc.</p>
+
+    <h3>Project Start: </h3>
+
+    <p>I did some research on how to access the user's copy and paste abilities, and it turns out the classic
+        way to access it was the document.execCommand() method. 
+    </p>
+
+    <a href="https://developer.mozilla.org/en-US/docs/Web/API/Document/execCommand">Here is the Documentation for it</a>
+
+    <p>I looked it up and there is a modern day replacement called Clipboard API. I've additionally decided
+        to use the Bootstrap Framework, as many tutorials suggest using it alongside Clipboard API. 
+    </p>
+
+    <img src="images/original.png" alt="Image of the original site I had started with" style="width: 50%;">
+    <p>This is what I was starting with. Currently, I'm only looking to make changes with CSS to make my giphy searcher
+        be unique to me instead of looking the same as the original assignment. 
+    </p>
+    <p>First, I changed it so that it displayed 5 gifs per row, and have it be centered on the screen. </p>
+    <p>Then, I made it responsive by reducing the amount of images based on current window width. </p>
+    <p>I completely remodeled the top header, making the search bar stay at the top of the screen during scrolling. Added a footer that shows the copyright.</p>
+    <p>I saw that GIPHY has not only GIFs but stickers too, so added a dropdown menu for that. I made the top header search and options look like a full sentance, cause it looks cool</p>
+    <p>I added more functions to onstart, so that it shows the current top 50 gifs. I also used web storage to save the syntax. clicking Go! will save, onstart will load.</p>
+    <p>I used <a href="https://www.w3schools.com/html/html5_webstorage.asp">this</a> site for webstorage. </p>
+    <p>I added a button to show more or less gifs, and a page number to show which page you are on. </p>
+    <p>I used <a href="https://youtu.be/i1WiTV6rkZ4?si=LrtE2H36bfcIvtsa">this</a> video for a tutorial on showing how to put the gif link into the pastebin. </p>
+</body>
+</html>
